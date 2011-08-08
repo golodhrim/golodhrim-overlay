@@ -16,7 +16,7 @@ HOMEPAGE="http://cairographics.org/"
 LICENSE="|| ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-IUSE="X aqua debug directfb doc drm gallium +glib opengl openvg qt4 static-libs +svg xcb xpyb"
+IUSE="X aqua debug directfb doc drm gallium +glib opengl openvg qt4 static-libs +svg xcb"
 
 # Test causes a circular depend on gtk+... since gtk+ needs cairo but test needs gtk+ so we need to block it
 RESTRICT="test"
@@ -45,9 +45,6 @@ RDEPEND="media-libs/fontconfig
 	xcb? (
 		x11-libs/libxcb
 		x11-libs/xcb-util
-	)
-	xpyb? (
-		x11-libs/xpyb
 	)"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -110,12 +107,6 @@ src_configure() {
 		"
 	fi
 
-	if use xpyb; then
-		myopts+="
-			XPYB_LIBS=/usr/lib/pkgconfig/xpyb.pc 
-			XPYB_CFLAGS=/usr/include/xpyb.h
-		"
-	fi
 	# --disable-xcb-lib:
 	#	do not override good xlib backed by hardforcing rendering over xcb
 	econf \
