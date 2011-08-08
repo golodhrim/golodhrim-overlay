@@ -10,7 +10,7 @@ DESCRIPTION="XCB-based Python bindings for the X Window System"
 HOMEPAGE="http://xcb.freedesktop.org/ http://pypi.python/pypi/xpyb"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="selinux"
+IUSE="selinux nodrm"
 
 RDEPEND=">=x11-libs/libxcb-1.1
 	>=dev-lang/python-2.5"
@@ -21,7 +21,8 @@ S="${WORKDIR}"/${PN}
 DOCS="NEWS README"
 
 pkg_setup() {
-	CONFIGURE_OPTIONS="$(use_enable selinux xselinux)"
+	CONFIGURE_OPTIONS="$(use_enable selinux xselinux)
+	$(use_enable nodrm drm2=no)"
 }
 
 src_unpack() {
