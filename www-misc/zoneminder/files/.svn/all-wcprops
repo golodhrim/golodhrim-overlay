@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/3/trunk/files
+END
+init.d
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/3/trunk/files/init.d
+END
+conf.d
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/3/trunk/files/conf.d
+END
+zoneminder-1.24.1-rundirdestdir.patch
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3/trunk/files/zoneminder-1.24.1-rundirdestdir.patch
+END
+zm.conf
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/3/trunk/files/zm.conf
+END
+postinstall-en2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3/trunk/files/postinstall-en2.txt
+END

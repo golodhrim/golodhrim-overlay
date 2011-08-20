@@ -58,12 +58,8 @@ src_configure() {
 	if ! use svg; then
 		export PYCAIRO_DISABLE_SVG="1"
 	fi
-	
-	if use xpyb; then
-		python_execute_function -s waf-utils_src_configure --nopyc --nopyo XPYB_LIBS=/usr/lib/pkgconfig/xpyb.pc XPYB_CFLAGS=/usr/include/xpyb.h
-	else
-		python_execute_function -s waf-utils_src_configure --nopyc --nopyo
-	fi
+
+	python_execute_function -s waf-utils_src_configure --nopyc --nopyo
 }
 
 src_compile() {
